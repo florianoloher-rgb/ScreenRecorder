@@ -92,7 +92,7 @@ class RecordingService : Service() {
 
         recorder = (if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S)
             MediaRecorder(this) else @Suppress("DEPRECATION") MediaRecorder()).apply {
-            setVideoSource(MediaRecorder.VideoSource.SCREEN)
+            setVideoSource(MediaRecorder.VideoSource.SURFACE)
             setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
             setVideoEncoder(MediaRecorder.VideoEncoder.H264)
             setVideoSize(w, h)
